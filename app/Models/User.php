@@ -34,7 +34,7 @@ class User extends Authenticatable implements JWTSubject
     protected $fillable = [
         'name', 'phone', 'email', 'password', 'introduction', 'avatar',
         'weixin_openid', 'weixin_unionid', 'registration_id',
-        'weixin_session_key', 'weapp_openid',
+        'weixin_session_key', 'weapp_openid','id_card_side_front','id_card_side_back','id_card_info'
     ];
 
     /**
@@ -44,6 +44,10 @@ class User extends Authenticatable implements JWTSubject
      */
     protected $hidden = [
         'password', 'remember_token',
+    ];
+
+    protected $cast = [
+        'id_card_info' => 'json'
     ];
 
     public function topics()
