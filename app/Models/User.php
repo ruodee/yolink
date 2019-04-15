@@ -46,8 +46,9 @@ class User extends Authenticatable implements JWTSubject
         'password', 'remember_token',
     ];
 
-    protected $cast = [
-        'id_card_info' => 'json'
+    protected $casts = [
+        'id_card_info' => 'json',
+        'skills_label' => 'json',
     ];
 
     public function topics()

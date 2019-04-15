@@ -17,6 +17,7 @@ class AddIdCardsToUserTable extends Migration
             $table->string('id_card_side_front')->nullable()->after('avatar');
             $table->string('id_card_side_back')->nullable()->after('id_card_side_front');
             $table->text('id_card_info')->nullable()->after('id_card_side_back');
+            $table->text('skills_label')->nullable()->after('id_card_info');
         });
     }
 
@@ -31,6 +32,7 @@ class AddIdCardsToUserTable extends Migration
             $table->dropColumn('id_card_side_front');
             $table->dropColumn('id_card_side_back');
             $table->dropColumn('id_card_info');
+            $table->dropColumn('skills_label');
         });
     }
 }
