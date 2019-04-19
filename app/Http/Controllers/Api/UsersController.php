@@ -71,6 +71,7 @@ class UsersController extends Controller
             'password' => bcrypt($request->password),
             'weapp_openid' => $data['openid'],
             'weixin_session_key' => $data['session_key'],
+            'skills_label'  => $request->checkboxItems,
         ]);
 
         // 清除验证码缓存
