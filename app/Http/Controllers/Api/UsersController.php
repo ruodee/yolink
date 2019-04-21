@@ -71,7 +71,7 @@ class UsersController extends Controller
             'password' => bcrypt($request->password),
             'weapp_openid' => $data['openid'],
             'weixin_session_key' => $data['session_key'],
-            'skills_label'  => $request->checkboxItems,
+            'skills_label'  => $request->skills_label,
         ]);
 
         // 清除验证码缓存
@@ -95,7 +95,7 @@ class UsersController extends Controller
     {
         $user = $this->user();
 
-        $attributes = $request->only(['name', 'email', 'introduction', 'registration_id']);
+        $attributes = $request->only(['name', 'email', 'introduction', 'registration_id','skills_label']);
 
         if ($request->avatar_image_id) {
             $image = Image::find($request->avatar_image_id);

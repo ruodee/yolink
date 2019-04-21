@@ -18,6 +18,7 @@ class UserRequest extends FormRequest
                     'password' => 'required|string|min:6',
                     'verification_key' => 'required|string',
                     'verification_code' => 'required|string',
+                    'skills_label'  => 'required'
                 ];
                 break;
             case 'PUT':

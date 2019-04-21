@@ -22,6 +22,8 @@ class UserTransformer extends TransformerAbstract
             'last_actived_at' => $user->last_actived_at->toDateTimeString(),
             'created_at' => $user->created_at->toDateTimeString(),
             'updated_at' => $user->updated_at->toDateTimeString(),
+            'skills_label' => $user->skills_label->toJson(),
+            'id_card_info' => $user->id_card_info->toJson(),
         ];
     }
 
