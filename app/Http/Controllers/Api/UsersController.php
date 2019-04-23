@@ -102,6 +102,9 @@ class UsersController extends Controller
 
             $attributes['avatar'] = $image->path;
         }
+        if ($request->skills_label) {
+            $attributes['skills_label'] = json_encode($request->skills_label);
+        }
         $user->update($attributes);
 
         return $this->response->item($user, new UserTransformer());
